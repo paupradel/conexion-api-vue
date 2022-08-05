@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'apitest',
+  name: 'ApiTest',
 }
 </script>
 

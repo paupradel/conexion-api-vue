@@ -1,7 +1,7 @@
 <template>
   <div>
   <h1>Conectando una API de datos a un componente de visualización</h1>
-    <apitest/>
+    <ApiTest/>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import apitest from './components/ApiTest.vue'
 export default {
   name: 'App',
   components: {
-    apitest
+    ApiTest
   }
 }
 </script>
