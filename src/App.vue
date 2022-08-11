@@ -2,16 +2,19 @@
   <div>
   <h1>Conectando una API de datos a un componente de visualización</h1>
     <ApiTest/>
+<!--    <ConexionDatos/>-->
   </div>
 </template>
 
 <script>
-import apitest from './components/ApiTest.vue'
+import ApiTest from "@/components/ApiTest";
+// import ConexionDatos from "@/components/conexion_datos/ConexionDatos";
 
 export default {
   name: 'App',
   components: {
-    ApiTest
+    ApiTest,
+    // ConexionDatos
   }
 }
 </script>
