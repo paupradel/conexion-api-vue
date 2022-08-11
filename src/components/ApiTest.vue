@@ -28,16 +28,12 @@ export default {
   name: 'ApiTest',
   data () {
     return {
-      info: null,
+      info: [],
+      // info: null,
       loading: true,
       errored: false
     }
   },
-  // filters: {
-  //   currencydecimal (value) {
-  //     return value.toFixed(2)
-  //   }
-  // },
   mounted () {
     axios
         .get('https://datos.cdmx.gob.mx/api/3/action/datastore_search?resource_id=2c44d5f1-f806-4bcc-91e5-408a5558d1c5')
@@ -51,29 +47,8 @@ export default {
         })
         .finally(() => this.loading = false)
   }
-  // data() {
-  //   return {
-  //     datos: [],
-  //   };
-  // },
-  //
-  // methods: {
-  //   async getData() {
-  //     try {
-  //       const response = await this.$http.get("https://datos.cdmx.gob.mx/api/3/action/datastore_search?resource_id=2c44d5f1-f806-4bcc-91e5-408a5558d1c5");
-  //       this.datos = response.data.records;
-  //       console.log(this.datos);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   },
-  // },
-  // created() {
-  //   this.getData()
-  // }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>
