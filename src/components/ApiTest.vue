@@ -31,7 +31,8 @@ export default {
       info: [],
       // info: null,
       loading: true,
-      errored: false
+      errored: false,
+      mostrar: []
     }
   },
   mounted () {
@@ -39,14 +40,52 @@ export default {
         .get('https://datos.cdmx.gob.mx/api/3/action/datastore_search?resource_id=2c44d5f1-f806-4bcc-91e5-408a5558d1c5')
         .then(response => {
           this.info = response.data.result.records
-          console.log(this.info)
+          // console.log(this.info)
         })
         .catch(error => {
           console.log(error)
           this.errored = true
         })
         .finally(() => this.loading = false)
-  }
+  },
+  methods: {
+    showInScreen () {
+      this.mostrar = this.info
+      return console.log(this.mostrar)
+    },
+    // Función para ordenar datos de un arreglo
+    ordenarArreglo () {
+      this.nuevo = this.info
+      this.info.sort()
+      return info
+      initializeChoices: function () {
+        let list = []
+        // lets load up our select with many choices
+        // so it will use a lot of memory
+        for (let i = 0; i < 1000; i++) {
+          list.push({
+            label: "Item " + i,
+            value: i
+          })
+        }
+        new Choices("#choices-single-default", {
+          searchEnabled: true,
+          removeItemButton: true,
+          choices: list
+        })
+      },
+      show: function () {
+        this.showChoices = true
+        this.$nextTick(() => {
+          this.initializeChoices()
+        })
+      },
+      hide: function () {
+        this.showChoices = false
+      }
+    }
+    }
+  },
 }
 </script>
 
